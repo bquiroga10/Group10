@@ -80,4 +80,6 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - Testing Files
 
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/PlayerMovementTest.cs)
+
 - Demonstration

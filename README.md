@@ -74,9 +74,9 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - [Coding Files:](https://github.com/bquiroga10/Group10/tree/master/code)
 
-  -[MainMenu](https://github.com/bquiroga10/Group10/blob/master/code/MainMenu.cs)
+  - [MainMenu](https://github.com/bquiroga10/Group10/blob/master/code/MainMenu.cs)
 
-  -[PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
 
 - Testing Files
 

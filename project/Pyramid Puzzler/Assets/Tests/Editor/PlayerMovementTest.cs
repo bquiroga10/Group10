@@ -38,7 +38,7 @@ public class PlayerMovementTest
 		Vector2 newPosition = playerMovement.updatePosition(position, movement, moveSpeed);
 		
 		// apply what the updatePosition() should to to this test variable
-		Vector2 newPositionTestVar = playerMovement.updatePosition(position, movement, moveSpeed);
+		Vector2 newPositionTestVar = position + movement * moveSpeed * Time.fixedDeltaTime;
 
 		// assert that the test variable and the variable that used the method are the same
 		Assert.AreEqual(newPositionTestVar, newPosition);

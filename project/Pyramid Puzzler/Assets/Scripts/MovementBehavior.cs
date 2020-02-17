@@ -18,7 +18,7 @@ public class MovementBehavior : MonoBehaviour
 	{
 		//Input
 		playerMovement.updateMovement(ref movement, Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-    }
+	}
 
 	void FixedUpdate()
 	{

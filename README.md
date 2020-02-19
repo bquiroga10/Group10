@@ -83,3 +83,41 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/PlayerMovementTest.cs)
 
 - [Demonstration](https://www.youtube.com/watch?v=0tFWdu0kHoM)
+
+------------------------------------------------------------------------------------------------------------------
+
+**Sprint 4**
+
+- [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Responsibilities.md)
+
+- [Product Backlog](https://github.com/bquiroga10/Group10/blob/master/artifacts/Product.md)
+
+- Sprint Backlog
+
+- [Requirements](https://github.com/bquiroga10/Group10/blob/master/artifacts/Requirements.md)
+
+- [Trello](https://trello.com/b/C5sP821a/group-10)
+
+- [Burndown and Velocity chart](https://docs.google.com/spreadsheets/d/1c19jIiDAFveZubnuQdf-lcTjxe98yklTnnw0_VnYVbQ/edit?usp=sharing)
+
+- [Architecture](https://github.com/bquiroga10/Group10/tree/master/artifacts/architecture)
+
+  - [Architectural Diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ArchitecturalDiagram.png)
+
+  - [Class Diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ClassDiagram.PNG)
+
+  - [Sequence Diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/SequenceDiagram.png)
+
+  - [User Interface Diagrams](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/UIHub.md)
+
+- [Coding Files:](https://github.com/bquiroga10/Group10/tree/master/code)
+
+  - [MainMenu](https://github.com/bquiroga10/Group10/blob/master/code/MainMenu.cs)
+
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
+
+- Testing Files
+
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/PlayerMovementTest.cs)
+
+- Demonstration

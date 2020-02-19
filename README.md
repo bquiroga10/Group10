@@ -92,7 +92,7 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - [Product Backlog](https://github.com/bquiroga10/Group10/blob/master/artifacts/Product.md)
 
-- Sprint Backlog
+- [Sprint Backlog](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint4.md)
 
 - [Requirements](https://github.com/bquiroga10/Group10/blob/master/artifacts/Requirements.md)
 

@@ -1,4 +1,4 @@
-** Program Organization **
+**Program Organization**
 --------------------------
 
 TBD

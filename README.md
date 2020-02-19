@@ -90,10 +90,6 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Responsibilities.md)
 
-- [Product Backlog](https://github.com/bquiroga10/Group10/blob/master/artifacts/Product.md)
-
-- [Sprint Backlog](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint4.md)
-
 - [Requirements](https://github.com/bquiroga10/Group10/blob/master/artifacts/Requirements.md)
 
 - [Trello](https://trello.com/b/C5sP821a/group-10)

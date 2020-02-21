@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-
 public class MainMenu : MonoBehaviour
 {
     public void Play()

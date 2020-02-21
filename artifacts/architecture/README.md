@@ -29,7 +29,7 @@ As we are using the free version of Unity, we cannot exceed $100,000 of funding 
 **Resource Management**
 ------------------------
 
-TBD
+Since we are using Open Trivia DB, resource management is not a factor in our build
 
 **Security**
 -------------------------
@@ -64,7 +64,7 @@ Despite being a video game, the is an input/output field with regards to reading
 **Error Processing**
 ------------------------
 
-All errors within the video game will be handeled within unity. 
+Most of the errors within the video game will be handeled within unity. The errors in regards to pulling from Open Trivia DB will have to be done manualy.
 
 **Fault Tolerence**
 ------------------------

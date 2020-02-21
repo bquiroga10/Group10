@@ -6,12 +6,12 @@ TBD
 **Code Design**
 -------------------------
 
-[Class diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ClassDiagram.PNG)
+![Class diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ClassDiagram.PNG)
 
 **Data Design**
 -------------------------
 
-Not sure if we will need a Database yet, so keep it posted
+We are using Open Trivia Database as a pool for our questions, so there is not a need for 
 
 **Buisness Rules**
 ------------------------
@@ -21,7 +21,10 @@ As we are using the free version of Unity, we cannot exceed $100,000 of funding 
 **User Interface Diagram**
 ------------------------
 
-[UI diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/UIHub.md)
+![First](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/UserInterface.png)
+
+![Second](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/User%20Interface%20Diagram.png)
+
 
 **Resource Management**
 ------------------------
@@ -41,12 +44,12 @@ TBD
 **Scalability**
 ------------------------
 
-TBD
+Only one user will ever be playing, so Scalability is not an issue.
 
 **Interoperability**
 ------------------------
 
-TBD
+This is a single player game, so there
 
 **Internationalization/Localization**
 ------------------------
@@ -81,7 +84,7 @@ TBD
 **Build-vs-Buy Decisions**
 ------------------------------
 
-Unity has quite a bit of free assets in the unity store, we will be using them so that we don't have to waste time with art design.
+Unity has quite a bit of free assets in the unity store, as well as using Open Trivia DB
 
 **Reuse**
 -----------------------------

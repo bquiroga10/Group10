@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class QuizOpen : MonoBehaviour
 {
+    private static QuizOpen instance = null;
     public static bool quizOpen = false;
 
     public GameObject quizUI;
+
     // Update is called once per frame
-    
+
     void Update()
     {
         // Replace  with stepping on tiles later on
-        if (Input.GetKeyDown(KeyCode.Q))
+        if ((Input.GetKeyDown(KeyCode.Q) && !quizOpen))
         {
-            // Just for testing
-            if (quizOpen)
-                Resume();
-            // This is the important one
-            else
-                Quiz();
+            instance = this;
+            Quiz();
         }
+    }
+
+    public static QuizOpen GetInstance()
+    {
+        return instance;
     }
 
     // Again, just for testing
@@ -37,5 +40,26 @@ public class QuizOpen : MonoBehaviour
         quizUI.SetActive(true);
         Time.timeScale = 0f;
         quizOpen = true;
+    }
+
+    public void Answer(AnswerButton selection)
+    {
+        if (selection.isCorrect)
+            Correct();
+        else
+            Incorrect();
+    }
+
+    public void Correct()
+    {
+        Debug.Log("Correct!");
+        Resume();
+
+    }
+
+    // When lives are implemented, it will also subtract a life
+    public void Incorrect()
+    {
+        Debug.Log("Incorrect");
     }
 }

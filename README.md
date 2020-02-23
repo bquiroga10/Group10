@@ -112,6 +112,10 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
 
+  - [QuizOpen](https://github.com/bquiroga10/Group10/blob/master/code/QuizOpen.cs)
+
+  - [AnswerButton](https://github.com/bquiroga10/Group10/blob/master/code/AnswerButton.cs)
+
 - Testing Files
 
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/PlayerMovementTest.cs)

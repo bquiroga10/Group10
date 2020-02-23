@@ -115,5 +115,9 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 - Testing Files
 
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/PlayerMovementTest.cs)
+  - [Play Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Start%20Button%20Manual%20Test.md)
+  - [Quit Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Quit%20Button%20Manual%20Test.md)
+  - [Question Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Question%20Pop-up%20Manual%20Test.md)
+  - [Answer Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Answering%20Question%20Manual%20Test.md)
 
 - Demonstration

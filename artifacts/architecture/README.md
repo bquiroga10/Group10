@@ -1,7 +1,9 @@
 **Program Organization**
 --------------------------
 
-TBD
+![Diagram 1](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ArchitecturalDiagram.png)
+
+![Sequence](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/SequenceDiagram.png)
 
 **Code Design**
 -------------------------

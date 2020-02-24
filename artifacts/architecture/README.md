@@ -96,4 +96,4 @@ a lot of what unity offers can be considered 'pre existing software' that we uit
 **Change Strategy**
 -----------------------------
 
-TBD
+Since all Unity projects are broken into smaller scenes. Throughout the designing process, If we need to change or add to a certain aspect of the project, we can simply go to the corresponding scene and edit it or add to it. Managing and editing scenes, whether its changing unity sprite settings (Position, scaling, sprite renderer, rigid body) or editing the coding script (for example, movement behaviour), all can be done easily by just clicking on the scene we wish to change and easily make changes to it. This becomes a simple, efficient and error free process thanks to Unity's way of organizing a project into well ordered sub-projects.

@@ -98,14 +98,6 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - [Architecture](https://github.com/bquiroga10/Group10/tree/master/artifacts/architecture)
 
-  - [Architectural Diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ArchitecturalDiagram.png)
-
-  - [Class Diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ClassDiagram.PNG)
-
-  - [Sequence Diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/SequenceDiagram.png)
-
-  - [User Interface Diagrams](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/UIHub.md)
-
 - [Coding Files:](https://github.com/bquiroga10/Group10/tree/master/code)
 
   - [MainMenu](https://github.com/bquiroga10/Group10/blob/master/code/MainMenu.cs)

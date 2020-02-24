@@ -1,6 +1,6 @@
 Sprint 4
 -----------------------------------
-Jacob Magnuson - Create a pause menu
+Jacob Magnuson - Documentation
 
 Jacob Pfaffenbichler - Begin working on questions
 

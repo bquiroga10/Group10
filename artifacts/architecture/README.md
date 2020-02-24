@@ -91,7 +91,7 @@ Unity has quite a bit of free assets in the unity store, as well as using Open T
 **Reuse**
 -----------------------------
 
-TBD
+a lot of what unity offers can be considered 'pre existing software' that we uitlized while creating the game. Tile generation, pre existing assets that we can import from the asset store and use and collider physics to name a few  are all unity software options that unity offers that we can use and reuse freely.
 
 **Change Strategy**
 -----------------------------

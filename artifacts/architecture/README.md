@@ -63,7 +63,7 @@ As this game is very text heavy, we have no plans to localize this game into oth
 **Input/Output**
 ------------------------
 
-Despite being a video game, there is an input/output field with regards to reading and printing out the questions, how this works is TBD.
+Despite being a video game, there is an input/output field with regards to reading and printing out the questions. The input will be from open unity DB, and it will parse the input into the text boxes within Unity.
 
 **Error Processing**
 ------------------------

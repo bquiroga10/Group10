@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 105154936}
   - component: {fileID: 105154935}
   m_Layer: 5
-  m_Name: Text
+  m_Name: A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 129867607}
   - component: {fileID: 129867610}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214ee66a1f042904aa9a0763926b0c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAnswer: {fileID: 563999396}
   isCorrect: 0
 --- !u!1 &563999394
 GameObject:
@@ -340,7 +341,7 @@ GameObject:
   - component: {fileID: 563999397}
   - component: {fileID: 563999396}
   m_Layer: 5
-  m_Name: Text
+  m_Name: A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -417,7 +418,7 @@ GameObject:
   - component: {fileID: 618856117}
   - component: {fileID: 618856116}
   m_Layer: 5
-  m_Name: Text
+  m_Name: A4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +497,7 @@ GameObject:
   - component: {fileID: 828177055}
   - component: {fileID: 828177058}
   m_Layer: 5
-  m_Name: Button
+  m_Name: A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214ee66a1f042904aa9a0763926b0c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAnswer: {fileID: 105154935}
   isCorrect: 0
 --- !u!1 &834615359
 GameObject:
@@ -635,7 +637,7 @@ GameObject:
   - component: {fileID: 834615361}
   - component: {fileID: 834615364}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: A3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -759,7 +761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214ee66a1f042904aa9a0763926b0c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 1
+  textAnswer: {fileID: 1801313204}
+  isCorrect: 0
 --- !u!1 &1202028600
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +957,7 @@ GameObject:
   - component: {fileID: 1376115553}
   - component: {fileID: 1376115552}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Q
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1032,6 +1035,8 @@ GameObject:
   - component: {fileID: 1444605506}
   - component: {fileID: 1444605505}
   - component: {fileID: 1444605509}
+  - component: {fileID: 1444605510}
+  - component: {fileID: 1444605511}
   m_Layer: 5
   m_Name: Questions
   m_TagString: Untagged
@@ -1131,7 +1136,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee56384a6830bad4490946a652811639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  api: {fileID: 1444605511}
+  canvas: {fileID: 1444605510}
   quizUI: {fileID: 1558151234}
+--- !u!114 &1444605510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444605504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a27378c08910de42a6900e7351403fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textQuestion: {fileID: 1376115552}
+  a1: {fileID: 828177058}
+  a2: {fileID: 129867610}
+  a3: {fileID: 834615364}
+  a4: {fileID: 1912214908}
+--- !u!114 &1444605511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444605504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67841e31ac185d4da605272c721f6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://opentdb.com/api.php?amount=1
 --- !u!1 &1558151234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1331,7 @@ GameObject:
   - component: {fileID: 1801313205}
   - component: {fileID: 1801313204}
   m_Layer: 5
-  m_Name: Text
+  m_Name: A3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1373,7 +1410,7 @@ GameObject:
   - component: {fileID: 1912214905}
   - component: {fileID: 1912214908}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: A4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,6 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214ee66a1f042904aa9a0763926b0c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAnswer: {fileID: 618856116}
   isCorrect: 0
 --- !u!1 &1988240157
 GameObject:

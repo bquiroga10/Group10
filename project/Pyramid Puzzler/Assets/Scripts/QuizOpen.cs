@@ -1,10 +1,23 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+using OpenTDB;
 
 public class QuizOpen : MonoBehaviour
 {
     private static QuizOpen instance = null;
+
+    [SerializeField]
+
+    private QuestionRequest api = null;
+
+    [SerializeField]
+
+    private QuestionCanvas canvas = null;
+
+    private List<Question> question;
+
     public static bool quizOpen = false;
 
     public GameObject quizUI;
@@ -14,10 +27,23 @@ public class QuizOpen : MonoBehaviour
     void Update()
     {
         // Replace  with stepping on tiles later on
-        if ((Input.GetKeyDown(KeyCode.Q) && !quizOpen))
+        if (Input.GetKeyDown(KeyCode.Q) && !quizOpen)
         {
+            if (api) // Checks if the api is present.
+            {
+                api.MakeRequest(
+                    new Action<Response>((Response response) =>
+                    { 
+                        question = response.results;
+                        Quiz();
+                    })
+                    );
+            }
+            else
+            {
+
+            }
             instance = this;
-            Quiz();
         }
     }
 
@@ -28,18 +54,21 @@ public class QuizOpen : MonoBehaviour
 
     // Again, just for testing
     // This will actually be done in a quiz class later on
-    void Resume()
+    public void Resume()
     {
         quizUI.SetActive(false);
         Time.timeScale = 1f;
         quizOpen = false;
     }
 
-    void Quiz()
+    public void Quiz()
     {
         quizUI.SetActive(true);
         Time.timeScale = 0f;
         quizOpen = true;
+        Question q = question[0];
+        if (canvas)
+            canvas.SetQuestion(q);
     }
 
     public void Answer(AnswerButton selection)

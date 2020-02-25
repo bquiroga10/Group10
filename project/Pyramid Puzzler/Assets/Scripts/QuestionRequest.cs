@@ -1,12 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
+using OpenTDB;
+
 public class QuestionRequest : MonoBehaviour
 {
+
     [SerializeField]
     private string url = "https://opentdb.com/api.php?amount=1";
+
+    private Action<Response> successCallback = null;
+
 
     private IEnumerator Request()
     {
@@ -14,10 +20,24 @@ public class QuestionRequest : MonoBehaviour
         yield return req.SendWebRequest();
 
 
+            byte[] byteResponse = req.downloadHandler.data;
+            Success(ToText(byteResponse));
+    }
+
+    private void Success(string response)
+    {
+        Response res = JsonUtility.FromJson<Response>(response);
+        successCallback(res);
     }
 
     public static string ToText(byte[] bytes)
     {
         return System.Text.Encoding.Default.GetString(bytes);
+    }
+
+    public void MakeRequest(Action<Response> successCallback)
+    {
+        this.successCallback = successCallback;
+        StartCoroutine(Request());
     }
 }

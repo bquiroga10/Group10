@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
+
+
 public class MainMenu : MonoBehaviour
 {
     public void Play()
@@ -15,7 +17,7 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        // This is only used when in the Unity Editor, or else it wouldn't close when in the editor
+        // This is only used when in the Unity Editor, or else it wouldn't close there either
         EditorApplication.isPlaying = false;
     }
 }

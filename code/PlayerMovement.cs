@@ -2,27 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement
 {
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    Vector2 movement;
+	public void updateMovement(ref Vector2 movement, float xAxis, float yAxis) {
+		movement.x = xAxis;
+		movement.y = yAxis;
+	}
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Input
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-
-    }
-
-    void FixedUpdate()
-    {
-        //Moevement 
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
+	public Vector2 updatePosition(Vector2 position, Vector2 movement, float moveSpeed) {
+		return position + movement * moveSpeed * Time.fixedDeltaTime;
+	}
 }

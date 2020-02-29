@@ -1,6 +1,13 @@
 **Program Organization**
 --------------------------
+
+Context
+----------------------------
+
 ![Context](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ContextDiagram.png)
+
+Container
+----------------------------
 
 ![Diagram 1](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ArchitecturalDiagram.png)
 

@@ -6,22 +6,40 @@ using UnityEngine;
 public class GridManager : MonoBehaviour {
 
     public Vector2 input;
-    private bool isMoving;
     public Vector3 endPos, curPos, movePos;
-    private float t;
     public float walkSpeed = 3f;
+    public string[] map;
+
+    public bool isMoving;
+    private float t;
     private GameObject question_tile, block_tile;
-    private string[] map;
-    private int curRow, curCol;
+
+    // Much more convenient to store the current row and column as integers.
+    private Tuple<int, int> position;
     private GameObject[,] tiles;
+
+    private PlayerMovement helper;
     // Start is called before the first frame update
     void Start() {
+
+        helper = new PlayerMovement();
+
+        // Load in the testing map
         map = System.IO.File.ReadAllLines("Assets/Scripts/MAP.txt");
+
+        // Load in the question tile Sprite
         question_tile = (GameObject)Instantiate(Resources.Load("QUESTION_TILE"));
+
+        // Load in the block tile sprite
         block_tile = (GameObject)Instantiate(Resources.Load("BLOCK_TILE"));
+
+        // This will hold the sprite information for each tile of the map.
         tiles = new GameObject[map.Length, map[0].Length];
+
         for(int i = 0 ; i < map.Length ; i++) {
             for(int j = 0 ; j < map[i].Length ; j++) {
+                // As of right now, tiles that the player can move on are represented as '.'
+                // If this tile is '.', spawn the tile in using the question
                 if(map[i][j] == '.') {
                     tiles[i, j] = spawnTile(i, j, 0);
                 }
@@ -29,24 +47,10 @@ public class GridManager : MonoBehaviour {
                     tiles[i, j] = spawnTile(i, j, 1);
                 }
             }
-            Debug.Log("Row " + (i + 1) + map[i]);
         }
-        findStartingPosition();
-    }
 
-    // Starting position in the game at the moment will
-    // be the first '.' on the bottom row.
-    private void findStartingPosition() {
-        for(int i = 0 ; i < map[0].Length ; i++) {
-            if(map[map.Length - 1][i] == '.') {
-                curRow = map.Length - 1;
-                curCol = i;
-                curPos = new Vector3(i, 0, 0);
-                endPos = new Vector3(i, 0, 0);
-                movePos = new Vector3(i, 0, 0);
-                break;
-            }
-        }
+        // Find the starting position of the player.
+        helper.findStartingPosition(ref position, ref curPos, ref endPos, ref movePos, map);
     }
 
     // Update is called once per frame
@@ -64,44 +68,51 @@ public class GridManager : MonoBehaviour {
         }
     }
 
-    bool inbounds(int row, int col) {
-        return 0 <= row && row < map.Length && 0 <= col && col < map[0].Length;
-    }
 
-    //
+    // Handles the movement of the game.
     private void movement() {
+
+        // Only check if the player is currently not moving.
         if(!isMoving) {
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            if(Mathf.Abs(input.x) > Mathf.Abs(input.y)) {
-                input.y = 0;
-            } else {
-                input.x = 0;
-            }
+            input = helper.restrictInput(input);
+
+            // Check to see if the player is attempting to move.
             if(input != Vector2.zero) {
-                input = new Vector2(System.Math.Sign(input.x), System.Math.Sign(input.y));
-                // Negate the y value because going up in a 2d array subtracts from
-                // the row, while in Unity, it increases
-                int nextRow = (int) (curRow - input.y);
-                int nextCol = (int) (curCol - input.x);
-                if(inbounds(nextRow, nextCol) && map[nextRow][nextCol] == '.') {
+
+                // Get what the next position should be when applied to our current position.
+                Tuple<int, int> nextPosition = helper.updatePosition(position, input);
+
+                // Validate that the next position is an okay position to move onto.
+                if(helper.validateMovement(nextPosition, map)) {
+
+                    // Start a coroutine that applys the movement onto the current position of the player smoothly.
                     StartCoroutine(Move());
-                    curRow = nextRow;
-                    curCol = nextCol;
+                    position = nextPosition;
                 }
             }
         }
     }
 
+    // Movement Routine that smoothly moves player.
     public IEnumerator Move() {
+
+        // ensures that the player does not apply another movement while this is occuring.
         isMoving = true;
         t = 0;
-        endPos = new Vector3(curPos.x + System.Math.Sign(input.x), curPos.y + System.Math.Sign(input.y), curPos.z);
+        // Get the position of where the player will end up.
+        endPos = new Vector3(curPos.x + input.x, curPos.y + input.y, curPos.z);
         while(t < 1f) {
             t += Time.deltaTime * walkSpeed;
             movePos = Vector3.Lerp(curPos, endPos, t);
             curPos = movePos;
             yield return null;
         }
+
+        // This here to ensure that accuracy is not lost when applying the movement.
+        curPos = endPos;
+
+        // Once this animation is over, the player is free to apply another movement.
         isMoving = false;
         yield return 0;
     }
@@ -109,7 +120,7 @@ public class GridManager : MonoBehaviour {
     private GameObject spawnTile(int row, int col, int tileType) {
         if(tileType == 0) { // Question Tile
             GameObject tile = (GameObject)Instantiate(question_tile, transform);
-            return tile;            
+            return tile;
         } else if(tileType == 1) { // Block tile
             GameObject tile = (GameObject)Instantiate(block_tile, transform);
             return tile;

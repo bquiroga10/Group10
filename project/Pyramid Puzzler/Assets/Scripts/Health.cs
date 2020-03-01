@@ -13,10 +13,15 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-
         if( health > numHearts)
         {
             health = numHearts;
+            /*
+            if(health == 0)
+            {
+                GameOver.End();
+            }
+            */
         }
 
         for (int i = 0; i < hearts.Length; i++)

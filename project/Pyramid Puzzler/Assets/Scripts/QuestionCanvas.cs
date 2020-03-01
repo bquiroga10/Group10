@@ -45,7 +45,7 @@ public class QuestionCanvas : MonoBehaviour
     {
         if (textQuestion)
             textQuestion.text = q.question;
-        List<int> order = Shuffle(toShuffle);
+        List<int > order = Shuffle(toShuffle);
         for(int n = 0; n < order.Count; n++)
         {
             switch (order[n])

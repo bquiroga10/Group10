@@ -58,6 +58,7 @@ public class MovementTests
         // Since this test calls for a map to be used. We will test it using TESTMAP3
         string[] map = System.IO.File.ReadAllLines("Assets/Tests/Editor/Test Maps/TESTMAP3.txt");
 
+        // Tests all tile positions on the test map
         for(int i = 0 ; i < map.Length ; i++) {
             for(int j = 0 ; j < map[0].Length ; j++) {
 
@@ -69,5 +70,50 @@ public class MovementTests
                 Assert.AreEqual(answer, correct_answer);
             }
         }
+    }
+
+    [Test]
+    public void updatePositionTest() {
+        PlayerMovement tester = new PlayerMovement();
+        // There are only 4 possible input vectors that can be given in this function,
+        // so just manually try all 4.
+        Vector2 input;
+        System.Tuple<int, int> position, correct_position;
+
+        // Testing (1, 0)
+        input = new Vector2(1, 0);
+        position = new System.Tuple<int, int>(3, 4);
+        position = tester.updatePosition(position, input);
+
+        correct_position = new System.Tuple<int, int>(3, 3);
+        
+        Assert.AreEqual(position, correct_position);
+
+        // Testing (-1, 0)
+        input = new Vector2(-1, 0);
+        position = new System.Tuple<int, int>(10, 5);
+        position = tester.updatePosition(position, input);
+
+        correct_position = new System.Tuple<int, int>(10, 6);
+        
+        Assert.AreEqual(position, correct_position);
+
+        // Testing (0, 1)
+        input = new Vector2(0, 1);
+        position = new System.Tuple<int, int>(2, 9);
+        position = tester.updatePosition(position, input);
+
+        correct_position = new System.Tuple<int, int>(1, 9);
+        
+        Assert.AreEqual(position, correct_position);
+
+        // Testing (0, -1)
+        input = new Vector2(0, -1);
+        position = new System.Tuple<int, int>(9, 16);
+        position = tester.updatePosition(position, input);
+
+        correct_position = new System.Tuple<int, int>(10, 16);
+        
+        Assert.AreEqual(position, correct_position);
     }
 }

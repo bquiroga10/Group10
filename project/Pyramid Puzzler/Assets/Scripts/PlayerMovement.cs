@@ -17,6 +17,7 @@ public class PlayerMovement
         return 0 <= row && row < maxRow && 0 <= col && col < maxCol;
     }
 
+	// Checks if the current row and column on the map is a '#', AKA a blocking tile.
 	public bool isBlockingTile(int row, int col, string[] map) {
 		return map[row][col] == '#';
 	}

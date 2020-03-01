@@ -39,6 +39,10 @@ public class QuizOpen : MonoBehaviour
                     })
                     );
             }
+            else
+            {
+
+            }
             instance = this;
         }
     }
@@ -86,6 +90,5 @@ public class QuizOpen : MonoBehaviour
     public void Incorrect()
     {
         Debug.Log("Incorrect");
-        //Health--
     }
 }

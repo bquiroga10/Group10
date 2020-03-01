@@ -17,6 +17,9 @@ public class PlayerMovement
         return 0 <= row && row < maxRow && 0 <= col && col < maxCol;
     }
 
+	public bool isBlockingTile(int row, int col, string[] map) {
+		return map[row][col] == '#';
+	}
 
     // Checks if the tile the player wants to move onto is a valid location.
     // A valid location is defined to be a tile that is:
@@ -25,7 +28,7 @@ public class PlayerMovement
     // ***This may be subject to change, but as of right now, these are the only restrictions.
     public bool validateMovement(Tuple<int, int> position, string[] map) {
         if(!inbounds(position.Item1, position.Item2, map.Length, map[0].Length)) return false;
-        if(map[position.Item1][position.Item2] == '#') return false;
+        if(isBlockingTile(position.Item1, position.Item2, map)) return false;
         return true;
     }
 

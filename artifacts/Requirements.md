@@ -8,9 +8,11 @@ Requirement ID| User Story ID | Requirement|Acceptence criteria |Effort | Priori
 05 | 06 | On the main game, the player will be able to pause the game at any time | The player is able to pause at any time while on the main game | 3 | Necessary | WORKING
 06 | 06 | While the game is paused, the player will be able to continue the game | They player is be able to leave the able to leave the pause menu and return to the game | 2 | Necessary | WORKING
 07 | 06 | While the game is paused, the player will be able to quit the game | They player is able to quit the game when the game is paused | 2 | Important | WORKING 
-08 | 01 | The game will be able to connect to Open Trivia DB in order to pull questions | The game can conncect to Open Trivia DB | 4 | Neccessary | WORKING
-09 | 01 | After connecting to Open Trivia DB, the game will correctly display the given question and answer choices | The game will correctly display the given question and answer choices | 4 | Neccessary | WORKING
-10 | 09 | When prompted,  the game will disallow movement and display a question and 4 given answer choices | When prompted, the game disallows movement and displays a question and 4 given answer choices | 4 | Necessary | SATISFIED
-11 | 09 | The game will allow movement again once the correct answer is picked | The game allows movement again once the correct answer is picked | 4 | Neccessary | SATISFIED
- 
-
+08 | 01 | The game will be able to connect to Open Trivia DB in order to pull questions | The game can conncect to Open Trivia DB | 3 | Neccessary | Testing
+09 | 01 | After connecting to Open Trivia DB, the game will correctly display the given question and answer choices | The game will correctly display the given question and answer choices | 4 | Neccessary | Testing
+10 | 01 | When displaying the answers, the seperate answer choices will be switched so that the right answer can be any of the choices | The answers will be swapped around so that any of the choices can be correct | 2 | Necessary | Testing
+11 | 09 | When prompted,  the game will disallow movement and display a question and 4 given answer choices | When prompted, the game disallows movement and displays a question and 4 given answer choices | 4 | Necessary | SATISFIED
+12 | 09 | The game will allow movement again once the correct answer is picked | The game allows movement again once the correct answer is picked | 4 | Neccessary | SATISFIED
+13 | 11 | The game shall display a count of how many tries a player has to answer a question right on both the main and the testing screen | The game displays a count of how many tries a player has to answer a question right on both the main and the testing screen | 2 | Important | WORKING
+14 | 11 | When the player gets a question wrong, the game will subtract one from the ammount of tries the user has to get the question wrong When the player gets a question wrong, the game subtracts one from the ammount of tries the user has to get the question wrong | 3 | Important | WORKING
+15 | 11 | When the ammmount of tries a player has to get a question right hits 0, the game will end and boot you back to the main menu | When the ammmount of tries a player has to get a question right hits 0, the game ends and boots you back to the main menu | 3 | Important | WORKING

@@ -118,7 +118,7 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - [Demonstration!](https://www.youtube.com/watch?v=GOrTLTMur-o&feature=youtu.be)
 ------------------------------------------------------------------------------------------------------------------
-**Sprint 4**
+**Sprint 5**
 
 - [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint5Responsibilities.md)
 
@@ -139,6 +139,16 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [QuizOpen](https://github.com/bquiroga10/Group10/blob/master/code/QuizOpen.cs)
 
   - [AnswerButton](https://github.com/bquiroga10/Group10/blob/master/code/AnswerButton.cs)
+ 
+  - [Health](https://github.com/bquiroga10/Group10/blob/master/code/Health.cs)
+
+  - [MovementBehavior](https://github.com/bquiroga10/Group10/blob/master/code/MovementBehavior.cs)
+
+  - [Question](https://github.com/bquiroga10/Group10/blob/master/code/Question.cs)
+
+  - [QuestionCanvas](https://github.com/bquiroga10/Group10/blob/master/code/QuestionCanvas.cs)
+
+  - [QuestionRequest](https://github.com/bquiroga10/Group10/blob/master/code/QuestionRequest.cs)
 
 - Testing Files
 

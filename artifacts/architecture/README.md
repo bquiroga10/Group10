@@ -6,15 +6,24 @@ Context
 
 ![Context](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ContextDiagram.png)
 
+The user interacts with the game
+
 Container
 ----------------------------
 
 ![Diagram 1](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ArchitecturalDiagram.png)
 
+The game interacts with openTDB (User story 001)
+
+Component Diagram
+--------------------
+
 ![Sequence](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/SequenceDiagram.png)
 
 **Code Design**
 -------------------------
+
+Class Diagram
 
 ![Class diagram](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/ClassDiagram.PNG)
 

@@ -20,8 +20,13 @@ Component Diagram
 
 ![Component](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/Component.png)
 
-User story 003: from the Movement UI, the game opens up the Question UI
-User story 011: The Quiz AI can subtract a life from the movement UI
+There are to main states that the game will be in once started: The Movement UI, and the Quiz UI. The movement UI will activate the Quiz UI, and the Quiz UI makes an API call to OpenTDB. Once a question from OpenTDB has been loaded, it will be displayed on the Quiz UI. Once a user inputs an answer, the Quiz UI either switches back to the Movement UI and adds points to the total score or it stays on the Quiz UI and subtracts from the players total health. This is dependent on if the user gets a question right or wrong, respectively.
+
+User Story 002: Once a user starts the game, a tile based map, or the Movement UI, will be loaded in
+User story 005: from the Movement UI, the game opens up the Question UI when the user activates a question
+User Story 009: Once a user gets a question right, the game switches back to the Movement UI. If not, it stays in the Quiz UI until he gets a question wrong.
+User story 011: The Quiz AI can subtract a life from the movement UI if the user inputs an incorrect answer
+User Story 015: Once a user gets a question right, points are added to the users total score.
 
 
 Sequnece Diagram

@@ -18,6 +18,15 @@ The game interacts with openTDB (User story 001)
 Component Diagram
 --------------------
 
+![Component](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/Component.png)
+
+User story 003: from the Movement UI, the game opens up the Question UI
+User story 011: The Quiz AI can subtract a life from the movement UI
+
+
+Sequnece Diagram
+--------------------
+
 ![Sequence](https://github.com/bquiroga10/Group10/blob/master/artifacts/architecture/SequenceDiagram.png)
 
 **Code Design**

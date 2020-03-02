@@ -158,6 +158,6 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [Question Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Question%20Pop-up%20Manual%20Test.md)
   - [Answer Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Answering%20Question%20Manual%20Test.md)
   - [Loading Map Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Loading%20Map%20Test.md)
-  - [OpenTDB Request Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/OpenTDB%20Request%20Test.md_
+  - [OpenTDB Request Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/OpenTDB%20Request%20Test.md)
 
-- Demonstration
+- [Demonstration](https://www.youtube.com/watch?v=ANzEoW1MfoQ&feature=share)

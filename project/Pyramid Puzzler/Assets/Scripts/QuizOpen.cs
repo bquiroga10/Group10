@@ -16,11 +16,18 @@ public class QuizOpen : MonoBehaviour
 
     private QuestionCanvas canvas = null;
 
+    [SerializeField]
+
+    private ScoreManager sm = null;
+
+
     private List<Question> question;
 
     public static bool quizOpen = false;
 
     public GameObject quizUI;
+
+
 
     // Update is called once per frame
 
@@ -82,8 +89,9 @@ public class QuizOpen : MonoBehaviour
     public void Correct()
     {
         Debug.Log("Correct!");
+        sm.ScoreUP();
+        sm.SetScore();
         Resume();
-
     }
 
     // When lives are implemented, it will also subtract a life

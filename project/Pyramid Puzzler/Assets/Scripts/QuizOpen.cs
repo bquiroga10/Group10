@@ -27,8 +27,6 @@ public class QuizOpen : MonoBehaviour
 
     public GameObject quizUI;
 
-
-
     // Update is called once per frame
 
     void Update()
@@ -89,7 +87,7 @@ public class QuizOpen : MonoBehaviour
     public void Correct()
     {
         Debug.Log("Correct!");
-        sm.ScoreUP();
+        sm.ScoreUP(question[0].difficulty);
         sm.SetScore();
         Resume();
     }

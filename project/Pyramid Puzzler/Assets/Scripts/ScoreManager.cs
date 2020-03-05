@@ -11,7 +11,6 @@ public class ScoreManager : MonoBehaviour
 
     private int score = 0;
 
-
     // Start is called before the first frame update
     public void SetScore()
     {
@@ -19,11 +18,21 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = score.ToString();
     }
 
-    public void ScoreUP()
+    public void ScoreUP(string diff)
     {
-       score += 10;
+        switch (diff)
+        {
+            case "easy":
+                score += 10;
+                break;
+            case "medium":
+                score += 20;
+                break;
+            case "hard":
+                score += 30;
+                break;
+        }
+
     }
-
     // Update is called once per frame
-
 }

@@ -161,3 +161,47 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [OpenTDB Request Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/OpenTDB%20Request%20Test.md)
 
 - [Demonstration](https://www.youtube.com/watch?v=ANzEoW1MfoQ&feature=share)
+------------------------------------------------------------------------------------------------------------------
+**Sprint 5**
+
+- [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint5Responsibilities.md)
+
+- [Requirements](https://github.com/bquiroga10/Group10/blob/master/artifacts/Requirements.md)
+
+- [Trello](https://trello.com/b/C5sP821a/group-10)
+
+- [Burndown and Velocity chart](https://docs.google.com/spreadsheets/d/1c19jIiDAFveZubnuQdf-lcTjxe98yklTnnw0_VnYVbQ/edit?usp=sharing)
+
+- [Architecture](https://github.com/bquiroga10/Group10/tree/master/artifacts/architecture)
+
+- [Coding Files:](https://github.com/bquiroga10/Group10/tree/master/code)
+
+  - [MainMenu](https://github.com/bquiroga10/Group10/blob/master/code/MainMenu.cs)
+
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
+
+  - [QuizOpen](https://github.com/bquiroga10/Group10/blob/master/code/QuizOpen.cs)
+
+  - [AnswerButton](https://github.com/bquiroga10/Group10/blob/master/code/AnswerButton.cs)
+ 
+  - [Health](https://github.com/bquiroga10/Group10/blob/master/code/Health.cs)
+
+  - [MovementBehavior](https://github.com/bquiroga10/Group10/blob/master/code/MovementBehavior.cs)
+
+  - [Question](https://github.com/bquiroga10/Group10/blob/master/code/Question.cs)
+
+  - [QuestionCanvas](https://github.com/bquiroga10/Group10/blob/master/code/QuestionCanvas.cs)
+
+  - [QuestionRequest](https://github.com/bquiroga10/Group10/blob/master/code/QuestionRequest.cs)
+
+- Testing Files
+
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/PlayerMovementTest.cs)
+  - [Play Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Start%20Button%20Manual%20Test.md)
+  - [Quit Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Quit%20Button%20Manual%20Test.md)
+  - [Question Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Question%20Pop-up%20Manual%20Test.md)
+  - [Answer Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Answering%20Question%20Manual%20Test.md)
+  - [Loading Map Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Loading%20Map%20Test.md)
+  - [OpenTDB Request Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/OpenTDB%20Request%20Test.md)
+
+- [Demonstration]

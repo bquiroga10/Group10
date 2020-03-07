@@ -16,6 +16,11 @@ public class QuizOpen : MonoBehaviour
 
     private QuestionCanvas canvas = null;
 
+    [SerializeField]
+
+    private ScoreManager sm = null;
+
+
     private List<Question> question;
 
     public static bool quizOpen = false;
@@ -82,8 +87,9 @@ public class QuizOpen : MonoBehaviour
     public void Correct()
     {
         Debug.Log("Correct!");
+        sm.ScoreUP(question[0].difficulty);
+        sm.SetScore();
         Resume();
-
     }
 
     // When lives are implemented, it will also subtract a life

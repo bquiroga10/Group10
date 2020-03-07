@@ -180,6 +180,8 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
 
+  - [GridManager](https://github.com/bquiroga10/Group10/blob/master/code/GridManager.cs)
+
   - [QuizOpen](https://github.com/bquiroga10/Group10/blob/master/code/QuizOpen.cs)
 
   - [AnswerButton](https://github.com/bquiroga10/Group10/blob/master/code/AnswerButton.cs)
@@ -191,6 +193,8 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [Question](https://github.com/bquiroga10/Group10/blob/master/code/Question.cs)
 
   - [QuestionCanvas](https://github.com/bquiroga10/Group10/blob/master/code/QuestionCanvas.cs)
+
+  - [ScoreManager](https://github.com/bquiroga10/Group10/blob/master/code/ScoreManager.cs)
 
   - [QuestionRequest](https://github.com/bquiroga10/Group10/blob/master/code/QuestionRequest.cs)
 

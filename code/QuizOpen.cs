@@ -27,13 +27,18 @@ public class QuizOpen : MonoBehaviour
 
     public GameObject quizUI;
 
+    public static bool busy = false;
+
     // Update is called once per frame
 
     void Update()
     {
         // Replace  with stepping on tiles later on
-        if (Input.GetKeyDown(KeyCode.Q) && !quizOpen)
+        if (GridManager.requestQuestion && !quizOpen)
         {
+            busy = true;
+            GridManager.requestQuestion = false;
+
             if (api) // Checks if the api is present.
             {
                 api.MakeRequest(
@@ -90,6 +95,7 @@ public class QuizOpen : MonoBehaviour
         sm.ScoreUP(question[0].difficulty);
         sm.SetScore();
         Resume();
+        busy = false;
     }
 
     // When lives are implemented, it will also subtract a life

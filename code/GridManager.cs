@@ -12,11 +12,13 @@ public class GridManager : MonoBehaviour {
 
     public bool isMoving;
     private float t;
-    private GameObject question_tile, block_tile;
+    private GameObject question_tile, block_tile, start_tile, end_tile;
 
     // Much more convenient to store the current row and column as integers.
     private Tuple<int, int> position;
     private GameObject[,] tiles;
+    public bool [,] hasQuestion;
+    public static bool requestQuestion;
 
     private PlayerMovement helper;
     // Start is called before the first frame update
@@ -27,11 +29,13 @@ public class GridManager : MonoBehaviour {
         // Load in the testing map
         map = System.IO.File.ReadAllLines("Assets/Scripts/MAP.txt");
 
-        // Load in the question tile Sprite
+        // Load in sprites
         question_tile = (GameObject)Instantiate(Resources.Load("QUESTION_TILE"));
-
-        // Load in the block tile sprite
         block_tile = (GameObject)Instantiate(Resources.Load("BLOCK_TILE"));
+        start_tile = (GameObject)Instantiate(Resources.Load("START_TILE"));
+        end_tile = (GameObject)Instantiate(Resources.Load("END_TILE"));
+
+        hasQuestion = new bool[map.Length, map[0].Length];
 
         // This will hold the sprite information for each tile of the map.
         tiles = new GameObject[map.Length, map[0].Length];
@@ -42,21 +46,33 @@ public class GridManager : MonoBehaviour {
                 // If this tile is '.', spawn the tile in using the question
                 if(map[i][j] == '.') {
                     tiles[i, j] = spawnTile(i, j, 0);
+                    hasQuestion[i, j] = true;
                 }
                 if(map[i][j] == '#') {
                     tiles[i, j] = spawnTile(i, j, 1);
                 }
+                if(map[i][j] == 'S') {
+                    tiles[i, j] = spawnTile(i, j, 2);
+                }
+                if(map[i][j] == 'E') {
+                    tiles[i, j] = spawnTile(i, j, 3);
+                }
             }
         }
-
+        position = new Tuple<int, int>(0, 0);
+        curPos = new Vector3(0, 0, 0);
+        movePos = new Vector3(0, 0, 0);
+        endPos = new Vector3(0, 0, 0);
         // Find the starting position of the player.
         helper.findStartingPosition(ref position, ref curPos, ref endPos, ref movePos, map);
+        requestQuestion = false;
     }
 
     // Update is called once per frame
     void Update() {
+        
         showGrid();
-        movement();
+        if(!requestQuestion && !QuizOpen.busy) movement();
     }
     // Shows the current state of the grid on the screen
     private void showGrid() {
@@ -112,6 +128,11 @@ public class GridManager : MonoBehaviour {
         // This here to ensure that accuracy is not lost when applying the movement.
         curPos = endPos;
 
+        if(hasQuestion[position.Item1, position.Item2]) {
+            requestQuestion = true;
+            hasQuestion[position.Item1, position.Item2] = false;
+        }
+
         // Once this animation is over, the player is free to apply another movement.
         isMoving = false;
         yield return 0;
@@ -123,6 +144,12 @@ public class GridManager : MonoBehaviour {
             return tile;
         } else if(tileType == 1) { // Block tile
             GameObject tile = (GameObject)Instantiate(block_tile, transform);
+            return tile;
+        } else if(tileType == 2) {
+            GameObject tile = (GameObject)Instantiate(start_tile, transform);
+            return tile;
+        } else if(tileType == 3) {
+            GameObject tile = (GameObject)Instantiate(end_tile, transform);
             return tile;
         }
         return null; // This should never happen

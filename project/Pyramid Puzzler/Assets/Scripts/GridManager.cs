@@ -12,7 +12,7 @@ public class GridManager : MonoBehaviour {
 
     public bool isMoving;
     private float t;
-    private GameObject question_tile, block_tile;
+    private GameObject question_tile, block_tile, start_tile, end_tile;
 
     // Much more convenient to store the current row and column as integers.
     private Tuple<int, int> position;
@@ -27,11 +27,11 @@ public class GridManager : MonoBehaviour {
         // Load in the testing map
         map = System.IO.File.ReadAllLines("Assets/Scripts/MAP.txt");
 
-        // Load in the question tile Sprite
+        // Load in sprites
         question_tile = (GameObject)Instantiate(Resources.Load("QUESTION_TILE"));
-
-        // Load in the block tile sprite
         block_tile = (GameObject)Instantiate(Resources.Load("BLOCK_TILE"));
+        start_tile = (GameObject)Instantiate(Resources.Load("START_TILE"));
+        end_tile = (GameObject)Instantiate(Resources.Load("END_TILE"));
 
         // This will hold the sprite information for each tile of the map.
         tiles = new GameObject[map.Length, map[0].Length];
@@ -46,9 +46,18 @@ public class GridManager : MonoBehaviour {
                 if(map[i][j] == '#') {
                     tiles[i, j] = spawnTile(i, j, 1);
                 }
+                if(map[i][j] == 'S') {
+                    tiles[i, j] = spawnTile(i, j, 2);
+                }
+                if(map[i][j] == 'E') {
+                    tiles[i, j] = spawnTile(i, j, 3);
+                }
             }
         }
-
+        position = new Tuple<int, int>(0, 0);
+        curPos = new Vector3(0, 0, 0);
+        movePos = new Vector3(0, 0, 0);
+        endPos = new Vector3(0, 0, 0);
         // Find the starting position of the player.
         helper.findStartingPosition(ref position, ref curPos, ref endPos, ref movePos, map);
     }
@@ -123,6 +132,12 @@ public class GridManager : MonoBehaviour {
             return tile;
         } else if(tileType == 1) { // Block tile
             GameObject tile = (GameObject)Instantiate(block_tile, transform);
+            return tile;
+        } else if(tileType == 2) {
+            GameObject tile = (GameObject)Instantiate(start_tile, transform);
+            return tile;
+        } else if(tileType == 3) {
+            GameObject tile = (GameObject)Instantiate(end_tile, transform);
             return tile;
         }
         return null; // This should never happen

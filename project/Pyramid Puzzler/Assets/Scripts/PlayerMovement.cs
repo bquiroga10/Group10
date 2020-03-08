@@ -49,16 +49,29 @@ public class PlayerMovement
     }
 
     // Starting position in the game at the moment will
-    // be the first '.' on the bottom row.
+    // be the S on the map
     public void findStartingPosition(ref Tuple<int, int> position, ref Vector3 curPos, ref Vector3 endPos, ref Vector3 movePos, string[] map) {
-        for(int i = 0 ; i < map[0].Length ; i++) {
-            if(map[map.Length - 1][i] == '.') {
-                position = new Tuple<int, int>(map.Length - 1, i);
-                curPos = new Vector3(i, 0, 0);
-                endPos = new Vector3(i, 0, 0);
-                movePos = new Vector3(i, 0, 0);
-                break;
+        for(int i = 0 ; i < map.Length ; i++) {
+            for(int j = 0 ; j < map[i].Length ; j++) {
+                if(map[i][j] == 'S') {
+                    position = new Tuple<int, int>(i, j);
+                    curPos = new Vector3(j, map.Length - i - 1, 0);
+                    endPos = new Vector3(j, map.Length - i - 1, 0);
+                    movePos = new Vector3(j, map.Length - i - 1, 0);
+                }
             }
         }
+    }
+
+    public Tuple<int, int> findEndingPosition(string[] map) {
+        Tuple<int, int> end = new Tuple<int, int>(-1, -1);
+        for(int i = 0 ; i < map.Length ; i++) {
+            for(int j = 0 ; j < map[0].Length ; j++) {
+                if(map[i][j] == 'E') {
+                    end = new Tuple<int, int>(i, j);
+                }
+            }
+        }
+        return end;
     }
 }

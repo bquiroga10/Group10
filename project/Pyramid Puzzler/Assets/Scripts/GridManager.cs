@@ -17,6 +17,8 @@ public class GridManager : MonoBehaviour {
     // Much more convenient to store the current row and column as integers.
     private Tuple<int, int> position;
     private GameObject[,] tiles;
+    public bool [,] hasQuestion;
+    public static bool requestQuestion;
 
     private PlayerMovement helper;
     // Start is called before the first frame update
@@ -33,6 +35,8 @@ public class GridManager : MonoBehaviour {
         start_tile = (GameObject)Instantiate(Resources.Load("START_TILE"));
         end_tile = (GameObject)Instantiate(Resources.Load("END_TILE"));
 
+        hasQuestion = new bool[map.Length, map[0].Length];
+
         // This will hold the sprite information for each tile of the map.
         tiles = new GameObject[map.Length, map[0].Length];
 
@@ -42,6 +46,7 @@ public class GridManager : MonoBehaviour {
                 // If this tile is '.', spawn the tile in using the question
                 if(map[i][j] == '.') {
                     tiles[i, j] = spawnTile(i, j, 0);
+                    hasQuestion[i, j] = true;
                 }
                 if(map[i][j] == '#') {
                     tiles[i, j] = spawnTile(i, j, 1);
@@ -60,12 +65,14 @@ public class GridManager : MonoBehaviour {
         endPos = new Vector3(0, 0, 0);
         // Find the starting position of the player.
         helper.findStartingPosition(ref position, ref curPos, ref endPos, ref movePos, map);
+        requestQuestion = false;
     }
 
     // Update is called once per frame
     void Update() {
+        
         showGrid();
-        movement();
+        if(!requestQuestion && !QuizOpen.busy) movement();
     }
     // Shows the current state of the grid on the screen
     private void showGrid() {
@@ -120,6 +127,11 @@ public class GridManager : MonoBehaviour {
 
         // This here to ensure that accuracy is not lost when applying the movement.
         curPos = endPos;
+
+        if(hasQuestion[position.Item1, position.Item2]) {
+            requestQuestion = true;
+            hasQuestion[position.Item1, position.Item2] = false;
+        }
 
         // Once this animation is over, the player is free to apply another movement.
         isMoving = false;

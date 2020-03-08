@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
 
     Text scoreText = null;
 
-    private int score = 0;
+    public int score = 0;
 
     // Start is called before the first frame update
     public void SetScore()

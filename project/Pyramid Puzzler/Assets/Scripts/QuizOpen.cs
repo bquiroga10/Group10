@@ -67,14 +67,12 @@ public class QuizOpen : MonoBehaviour
     public void Resume()
     {
         quizUI.SetActive(false);
-        Time.timeScale = 1f;
         quizOpen = false;
     }
 
     public void Quiz()
     {
         quizUI.SetActive(true);
-        Time.timeScale = 0f;
         quizOpen = true;
         Question q = question[0];
         if (canvas)

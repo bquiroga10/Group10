@@ -12,14 +12,13 @@ public class GridManager : MonoBehaviour {
 
     public bool isMoving;
     private float t;
-    private GameObject question_tile, block_tile, start_tile, end_tile;
+    private GameObject question_tile, block_tile, start_tile, end_tile, blank_tile;
 
     // Much more convenient to store the current row and column as integers.
     private Tuple<int, int> position;
     private GameObject[,] tiles;
     public bool [,] hasQuestion;
     public static bool requestQuestion;
-
     private PlayerMovement helper;
     // Start is called before the first frame update
     void Start() {
@@ -34,6 +33,7 @@ public class GridManager : MonoBehaviour {
         block_tile = (GameObject)Instantiate(Resources.Load("BLOCK_TILE"));
         start_tile = (GameObject)Instantiate(Resources.Load("START_TILE"));
         end_tile = (GameObject)Instantiate(Resources.Load("END_TILE"));
+        blank_tile = (GameObject)Instantiate(Resources.Load("BLANK_TILE"));
 
         hasQuestion = new bool[map.Length, map[0].Length];
 
@@ -42,20 +42,22 @@ public class GridManager : MonoBehaviour {
 
         for(int i = 0 ; i < map.Length ; i++) {
             for(int j = 0 ; j < map[i].Length ; j++) {
+                tiles[i, j] = (GameObject)Instantiate(block_tile, transform);
+                // tiles[i, j] = new GameObject();
                 // As of right now, tiles that the player can move on are represented as '.'
                 // If this tile is '.', spawn the tile in using the question
                 if(map[i][j] == '.') {
-                    tiles[i, j] = spawnTile(i, j, 0);
+                    spawnTile(i, j, 0);
                     hasQuestion[i, j] = true;
                 }
                 if(map[i][j] == '#') {
-                    tiles[i, j] = spawnTile(i, j, 1);
+                    spawnTile(i, j, 1);
                 }
                 if(map[i][j] == 'S') {
-                    tiles[i, j] = spawnTile(i, j, 2);
+                    spawnTile(i, j, 2);
                 }
                 if(map[i][j] == 'E') {
-                    tiles[i, j] = spawnTile(i, j, 3);
+                    spawnTile(i, j, 3);
                 }
             }
         }
@@ -72,7 +74,7 @@ public class GridManager : MonoBehaviour {
     void Update() {
         
         showGrid();
-        if(!requestQuestion && !QuizOpen.busy) movement();
+        movement();
     }
     // Shows the current state of the grid on the screen
     private void showGrid() {
@@ -87,12 +89,10 @@ public class GridManager : MonoBehaviour {
 
     // Handles the movement of the game.
     private void movement() {
-
-        // Only check if the player is currently not moving.
+        if(requestQuestion || QuizOpen.busy) return;
         if(!isMoving) {
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             input = helper.restrictInput(input);
-
             // Check to see if the player is attempting to move.
             if(input != Vector2.zero) {
 
@@ -101,7 +101,8 @@ public class GridManager : MonoBehaviour {
 
                 // Validate that the next position is an okay position to move onto.
                 if(helper.validateMovement(nextPosition, map)) {
-
+                    // ensures that the player does not apply another movement while this is occuring.
+                    isMoving = true;
                     // Start a coroutine that applys the movement onto the current position of the player smoothly.
                     StartCoroutine(Move());
                     position = nextPosition;
@@ -113,8 +114,6 @@ public class GridManager : MonoBehaviour {
     // Movement Routine that smoothly moves player.
     public IEnumerator Move() {
 
-        // ensures that the player does not apply another movement while this is occuring.
-        isMoving = true;
         t = 0;
         // Get the position of where the player will end up.
         endPos = new Vector3(curPos.x + input.x, curPos.y + input.y, curPos.z);
@@ -131,27 +130,26 @@ public class GridManager : MonoBehaviour {
         if(hasQuestion[position.Item1, position.Item2]) {
             requestQuestion = true;
             hasQuestion[position.Item1, position.Item2] = false;
+            spawnTile(position.Item1, position.Item2, 4);
         }
+
 
         // Once this animation is over, the player is free to apply another movement.
         isMoving = false;
         yield return 0;
     }
 
-    private GameObject spawnTile(int row, int col, int tileType) {
+    private void spawnTile(int row, int col, int tileType) {
         if(tileType == 0) { // Question Tile
-            GameObject tile = (GameObject)Instantiate(question_tile, transform);
-            return tile;
-        } else if(tileType == 1) { // Block tile
-            GameObject tile = (GameObject)Instantiate(block_tile, transform);
-            return tile;
-        } else if(tileType == 2) {
-            GameObject tile = (GameObject)Instantiate(start_tile, transform);
-            return tile;
-        } else if(tileType == 3) {
-            GameObject tile = (GameObject)Instantiate(end_tile, transform);
-            return tile;
+            tiles[row, col].GetComponent<SpriteRenderer>().sprite = question_tile.GetComponent<SpriteRenderer>().sprite;
+        } else if(tileType == 1) { // Block Tile
+            tiles[row, col].GetComponent<SpriteRenderer>().sprite = block_tile.GetComponent<SpriteRenderer>().sprite;
+        } else if(tileType == 2) { // Start Tile
+            tiles[row, col].GetComponent<SpriteRenderer>().sprite = start_tile.GetComponent<SpriteRenderer>().sprite;
+        } else if(tileType == 3) { // End Tile
+            tiles[row, col].GetComponent<SpriteRenderer>().sprite = end_tile.GetComponent<SpriteRenderer>().sprite;
+        } else if(tileType == 4) { // Blank Tile
+            tiles[row, col].GetComponent<SpriteRenderer>().sprite = blank_tile.GetComponent<SpriteRenderer>().sprite;
         }
-        return null; // This should never happen
     }
 }

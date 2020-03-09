@@ -1735,7 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67841e31ac185d4da605272c721f6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://opentdb.com/api.php?amount=1
+  url: https://opentdb.com/api.php?amount=1&type=multiple
 --- !u!1 &1558151234
 GameObject:
   m_ObjectHideFlags: 0

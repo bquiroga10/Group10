@@ -9,7 +9,7 @@ public class QuestionRequest : MonoBehaviour
 {
 
     [SerializeField]
-    private string url = "https://opentdb.com/api.php?amount=1";
+    private string url = "https://opentdb.com/api.php?amount=1&type=multiple";
 
     private Action<Response> successCallback = null;
 

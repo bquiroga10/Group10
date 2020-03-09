@@ -1,4 +1,4 @@
-Sprint 5 Responsibilities
+Sprint 6 Responsibilities
 -------------------------
 Jacob Magnuson - Pause Menu
 
@@ -6,4 +6,4 @@ Jacob Pfaffenbichler - Add a scoring system that adds points as you get answers 
 
 Billy Quiroga - Adding functionality that makes it so when a tile is stepped on, a question pops up
 
-Amro Zidan - Add functionality that makes it so that if a user answers a question incorrectly, a unit of life disappears.
+Amro Zidan - Adding GameOver scene with a Restart Button functionality.

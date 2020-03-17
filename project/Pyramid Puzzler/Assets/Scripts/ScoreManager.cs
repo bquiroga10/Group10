@@ -25,14 +25,14 @@ public class ScoreManager : MonoBehaviour
             case "easy":
                 score += 10;
                 break;
+
             case "medium":
                 score += 20;
                 break;
+
             case "hard":
                 score += 30;
                 break;
         }
-
     }
-    // Update is called once per frame
 }

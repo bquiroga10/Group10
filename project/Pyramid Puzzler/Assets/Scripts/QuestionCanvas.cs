@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 using OpenTDB;
 
 public class QuestionCanvas : MonoBehaviour
@@ -41,10 +40,12 @@ public class QuestionCanvas : MonoBehaviour
         }
         return newList;
     }
-    public void SetQuestion(Question q)
+
+    public void SetQuestion(Question q, Timer tm)
     {
         if (textQuestion)
             textQuestion.text = q.question;
+
         List<int> order = Shuffle(toShuffle);
         for(int n = 0; n < order.Count; n++)
         {
@@ -64,7 +65,6 @@ public class QuestionCanvas : MonoBehaviour
                     break;
             }
         }
-
     }
 
     public void SetAnswer(int n, AnswerButton button, Question q)

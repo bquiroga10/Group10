@@ -20,6 +20,10 @@ public class QuizOpen : MonoBehaviour
 
     private ScoreManager sm = null;
 
+    [SerializeField]
+
+    private Timer tm = null;
+
 
     private List<Question> question;
 
@@ -54,6 +58,11 @@ public class QuizOpen : MonoBehaviour
 
             }
             instance = this;
+
+        }
+        if (quizOpen == true)
+        {
+            StartCoroutine(tm.SetTimer());
         }
     }
 
@@ -76,7 +85,9 @@ public class QuizOpen : MonoBehaviour
         quizOpen = true;
         Question q = question[0];
         if (canvas)
-            canvas.SetQuestion(q);
+        {
+            canvas.SetQuestion(q, tm);
+        }
     }
 
     public void Answer(AnswerButton selection)
@@ -92,6 +103,7 @@ public class QuizOpen : MonoBehaviour
         Debug.Log("Correct!");
         sm.ScoreUP(question[0].difficulty);
         sm.SetScore();
+        tm.timeLeft = 15;
         Resume();
         busy = false;
     }

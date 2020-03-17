@@ -216,7 +216,7 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 ------------------------------------------------------------------------------------------------------------------
 **Sprint 7**
 
-- [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint6Responsibilities.md)
+- [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint7Responsibilities.md)
 
 - [Requirements](https://github.com/bquiroga10/Group10/blob/master/artifacts/Requirements.md)
 

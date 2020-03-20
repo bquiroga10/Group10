@@ -15,13 +15,13 @@ namespace Tests
             ScoreManager test = new ScoreManager();
 
             test.ScoreUP("easy");
-            Assert.AreEqual(test.score, 10);
+            Assert.AreEqual(ScoreManager.score, 10);
 
             test.ScoreUP("medium");
-            Assert.AreEqual(test.score, 30);
+            Assert.AreEqual(ScoreManager.score, 30);
 
             test.ScoreUP("hard");
-            Assert.AreEqual(test.score, 60);
+            Assert.AreEqual(ScoreManager.score, 60);
 
         }
     }

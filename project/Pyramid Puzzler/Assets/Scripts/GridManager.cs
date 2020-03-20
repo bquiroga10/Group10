@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GridManager : MonoBehaviour {
 
@@ -43,21 +44,21 @@ public class GridManager : MonoBehaviour {
         for(int i = 0 ; i < map.Length ; i++) {
             for(int j = 0 ; j < map[i].Length ; j++) {
                 tiles[i, j] = (GameObject)Instantiate(block_tile, transform);
-                // tiles[i, j] = new GameObject();
+
                 // As of right now, tiles that the player can move on are represented as '.'
                 // If this tile is '.', spawn the tile in using the question
                 if(map[i][j] == '.') {
-                    spawnTile(i, j, 0);
+                    setSprite(i, j, 0);
                     hasQuestion[i, j] = true;
                 }
                 if(map[i][j] == '#') {
-                    spawnTile(i, j, 1);
+                    setSprite(i, j, 1);
                 }
                 if(map[i][j] == 'S') {
-                    spawnTile(i, j, 2);
+                    setSprite(i, j, 2);
                 }
                 if(map[i][j] == 'E') {
-                    spawnTile(i, j, 3);
+                    setSprite(i, j, 3);
                 }
             }
         }
@@ -75,6 +76,8 @@ public class GridManager : MonoBehaviour {
         
         showGrid();
         movement();
+        if(!isMoving && helper.isEndingPosition(position, map)) SceneManager.LoadScene("Victory");
+
     }
     // Shows the current state of the grid on the screen
     private void showGrid() {
@@ -95,8 +98,6 @@ public class GridManager : MonoBehaviour {
             input = helper.restrictInput(input);
             // Check to see if the player is attempting to move.
             if(input != Vector2.zero) {
-
-                // Get what the next position should be when applied to our current position.
                 Tuple<int, int> nextPosition = helper.updatePosition(position, input);
 
                 // Validate that the next position is an okay position to move onto.
@@ -130,7 +131,7 @@ public class GridManager : MonoBehaviour {
         if(hasQuestion[position.Item1, position.Item2]) {
             requestQuestion = true;
             hasQuestion[position.Item1, position.Item2] = false;
-            spawnTile(position.Item1, position.Item2, 4);
+            setSprite(position.Item1, position.Item2, 4);
         }
 
 
@@ -139,7 +140,7 @@ public class GridManager : MonoBehaviour {
         yield return 0;
     }
 
-    private void spawnTile(int row, int col, int tileType) {
+    private void setSprite(int row, int col, int tileType) {
         if(tileType == 0) { // Question Tile
             tiles[row, col].GetComponent<SpriteRenderer>().sprite = question_tile.GetComponent<SpriteRenderer>().sprite;
         } else if(tileType == 1) { // Block Tile

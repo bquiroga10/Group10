@@ -10,6 +10,6 @@ public class ScoreDisplayer : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         if(scoreText)
-            scoreText.text = "You finished the game with" + ScoreManager.score.ToString() + " points!";
+            scoreText.text = "You finished the game with " + ScoreManager.score.ToString() + " points!";
     }
 }

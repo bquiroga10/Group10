@@ -250,6 +250,10 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
   - [QuestionRequest](https://github.com/bquiroga10/Group10/blob/master/code/QuestionRequest.cs)
 
+  - [Timer](https://github.com/bquiroga10/Group10/blob/master/code/Timer.cs)
+
+  - [ScoreDisplayer](https://github.com/bquiroga10/Group10/blob/master/code/ScoreDisplayer.cs)
+
 - Testing Files
   - **Automatic**
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/MovementTests.cs)

@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
             running = true;
             yield return new WaitForSeconds(1);
             timeLeft--;
+            // Include game over feature if timer hits 0 here
             running = false;
         }
     }

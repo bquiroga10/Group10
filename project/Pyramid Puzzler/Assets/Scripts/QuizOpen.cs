@@ -62,6 +62,7 @@ public class QuizOpen : MonoBehaviour
         }
         if (quizOpen == true)
         {
+            // When the quiz is open, start the timer.
             StartCoroutine(tm.SetTimer());
         }
     }

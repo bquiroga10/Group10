@@ -6,8 +6,6 @@ using UnityEngine;
 public class PlayerMovement
 {
     // Takes the current position of the player and applies the input movement vector to it.
-    // We subtract y from row and x from column because row and column are from an array
-    // perspective while the input x and y are from a cartesian coordinate perspective.
     public Tuple<int, int> updatePosition(Tuple<int, int> position, Vector2 input) {
         return new Tuple<int, int>((int) (position.Item1 - input.y), (int) (position.Item2 - input.x));
     }
@@ -48,8 +46,7 @@ public class PlayerMovement
         return new Vector2(System.Math.Sign(input.x), System.Math.Sign(input.y));
     }
 
-    // Starting position in the game at the moment will
-    // be the S on the map
+    // Starting position in the game at the moment will be the S on the map.
     public void findStartingPosition(ref Tuple<int, int> position, ref Vector3 curPos, ref Vector3 endPos, ref Vector3 movePos, string[] map) {
         for(int i = 0 ; i < map.Length ; i++) {
             for(int j = 0 ; j < map[i].Length ; j++) {
@@ -63,6 +60,7 @@ public class PlayerMovement
         }
     }
 
+    // Ending position in the game at the moment will be the E on the map.
     public Tuple<int, int> findEndingPosition(string[] map) {
         Tuple<int, int> end = new Tuple<int, int>(-1, -1);
         for(int i = 0 ; i < map.Length ; i++) {
@@ -73,5 +71,10 @@ public class PlayerMovement
             }
         }
         return end;
+    }
+
+    // Checks if the current position of the player is the ending position of the map.
+    public bool isEndingPosition(Tuple<int, int> pos, string[] map) {
+        return map[pos.Item1][pos.Item2] == 'E';
     }
 }

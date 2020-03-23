@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static int score = 0;
+    
     [SerializeField]
 
     Text scoreText = null;
 
-    public int score = 0;
 
-    // Start is called before the first frame update
+    void Start() {
+        score = 0;
+    }
+
     public void SetScore()
     {
         if(scoreText)
@@ -25,14 +29,14 @@ public class ScoreManager : MonoBehaviour
             case "easy":
                 score += 10;
                 break;
+
             case "medium":
                 score += 20;
                 break;
+
             case "hard":
                 score += 30;
                 break;
         }
-
     }
-    // Update is called once per frame
 }

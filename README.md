@@ -259,6 +259,7 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/MovementTests.cs)
   - [AutomaticScore](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/Score%20Test.cs)
   - [MapTest](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/MapTests.cs)
+  - [RandomList](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/RandomList.cs)
   - **Manual** 
   - [Play Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Start%20Button%20Manual%20Test.md)
   - [Quit Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Quit%20Button%20Manual%20Test.md)

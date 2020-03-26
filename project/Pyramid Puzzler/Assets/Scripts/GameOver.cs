@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
 
     public void GameEnd()
     {
-        open.Resume();
+        QuizOpen.GetInstance().Resume();
         SceneManager.LoadScene("GameOver");
     }
 }

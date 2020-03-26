@@ -49,12 +49,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if (QuizOpen.GetInstance().quizOpen)
-        {
-            active = true;
-        }
-        else
-            active = false;
+        active = QuizOpen.GetInstance().isOpen() ? true : false;
         StartCoroutine(SetTimer());
     }
 

@@ -90,6 +90,11 @@ public class QuizOpen : MonoBehaviour
         }
     }
 
+    public bool isOpen()
+    {
+        return quizOpen;
+    }
+
     public void Answer(AnswerButton selection)
     {
         if (selection.isCorrect)

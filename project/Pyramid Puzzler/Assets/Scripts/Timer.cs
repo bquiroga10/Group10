@@ -8,25 +8,30 @@ public class Timer : MonoBehaviour
 {
     [SerializeField]
 
-
-
     Text timerText = null;
+
+    private QuizOpen open = null;
+
+    private GameOver gm = null;
 
     public int timeLeft = 15;
 
     public bool running = false;
 
+    public bool active = false;
+
     public IEnumerator SetTimer()
     {
         tText();
-        while (running == false && timeLeft > 0)
+        while ((running == false) && (active == true) && (timeLeft > 0))
         {
             running = true;
             yield return new WaitForSeconds(1);
             timeLeft--;
             if(timeLeft == 0)
             {
-                SceneManager.LoadScene("GameOver"); 
+                QuizOpen.GetInstance().Resume();
+                SceneManager.LoadScene("GameOver");
             }
             running = false;
         }
@@ -36,4 +41,21 @@ public class Timer : MonoBehaviour
     {
       timerText.text = timeLeft.ToString();
     }
+
+    public void ResetTimer()
+    {
+        timeLeft = 16;
+    }
+
+    private void Update()
+    {
+        if (QuizOpen.GetInstance().quizOpen)
+        {
+            active = true;
+        }
+        else
+            active = false;
+        StartCoroutine(SetTimer());
+    }
+
 }

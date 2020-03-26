@@ -16,6 +16,7 @@ public class AnswerButton : MonoBehaviour
             textAnswer.text = text;
     }
 
+
     public void Select()
     {
         QuizOpen.GetInstance().Answer(this);

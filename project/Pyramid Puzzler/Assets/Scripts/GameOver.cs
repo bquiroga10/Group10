@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
+    private QuizOpen open = null;
+
     public void GameEnd()
     {
+        open.Resume();
         SceneManager.LoadScene("GameOver");
     }
 }

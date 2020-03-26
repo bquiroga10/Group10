@@ -38,6 +38,7 @@ public class QuizOpen : MonoBehaviour
     void Update()
     {
         // Replace  with stepping on tiles later on
+        instance = this;
         if (GridManager.requestQuestion && !quizOpen)
         {
             busy = true;
@@ -57,7 +58,7 @@ public class QuizOpen : MonoBehaviour
             {
 
             }
-            instance = this;
+
         }
 
 

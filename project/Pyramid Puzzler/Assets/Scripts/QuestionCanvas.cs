@@ -71,12 +71,6 @@ public class QuestionCanvas : MonoBehaviour
                     break;
             }
         }
-        /*
-        if(pUps.sqIsActive)
-        {
-            pUp1.gameObject.SetActive(true);
-        }
-        */
     }
 
     public void SetAnswer(int n, AnswerButton button, Question q)

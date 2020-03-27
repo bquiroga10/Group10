@@ -1276,7 +1276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1051461338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -650, y: 97}
+  m_AnchoredPosition: {x: -615, y: 100}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051461339
@@ -1337,12 +1337,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: a52ce649fdab9e84f8964c993257282b, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1051461342}
+        m_MethodName: UseSQ
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1395,8 +1395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ce649fdab9e84f8964c993257282b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sqIsActive: 0
   eiIsActive: 0
+  pUp1: {fileID: 1051461339}
 --- !u!1 &1202028600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +1997,7 @@ MonoBehaviour:
   canvas: {fileID: 1444605510}
   sm: {fileID: 1299832146}
   tm: {fileID: 1444605512}
+  pUps: {fileID: 1444605513}
   quizOpen: 0
   quizUI: {fileID: 1558151234}
 --- !u!114 &1444605510
@@ -2045,6 +2046,7 @@ MonoBehaviour:
   timerText: {fileID: 1972182263}
   timeLeft: 15
   running: 0
+  active: 0
 --- !u!114 &1444605513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2057,8 +2059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ce649fdab9e84f8964c993257282b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sqIsActive: 0
   eiIsActive: 0
+  pUp1: {fileID: 1051461339}
 --- !u!1 &1558151234
 GameObject:
   m_ObjectHideFlags: 0

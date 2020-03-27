@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 using OpenTDB;
 
 public class QuizOpen : MonoBehaviour
@@ -24,6 +25,9 @@ public class QuizOpen : MonoBehaviour
 
     private Timer tm = null;
 
+    [SerializeField]
+
+    private PowerUps pUps = null;
 
     private List<Question> question;
 

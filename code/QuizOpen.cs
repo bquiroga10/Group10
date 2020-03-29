@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 using OpenTDB;
 
 public class QuizOpen : MonoBehaviour
@@ -24,10 +25,13 @@ public class QuizOpen : MonoBehaviour
 
     private Timer tm = null;
 
+    [SerializeField]
+
+    private PowerUps pUps = null;
 
     private List<Question> question;
 
-    public static bool quizOpen = false;
+    public bool quizOpen = false;
 
     public GameObject quizUI;
 
@@ -38,6 +42,7 @@ public class QuizOpen : MonoBehaviour
     void Update()
     {
         // Replace  with stepping on tiles later on
+        instance = this;
         if (GridManager.requestQuestion && !quizOpen)
         {
             busy = true;
@@ -57,14 +62,10 @@ public class QuizOpen : MonoBehaviour
             {
 
             }
-            instance = this;
 
         }
-        if (quizOpen == true)
-        {
-            // When the quiz is open, start the timer.
-            StartCoroutine(tm.SetTimer());
-        }
+
+
     }
 
     public static QuizOpen GetInstance()
@@ -76,12 +77,15 @@ public class QuizOpen : MonoBehaviour
     // This will actually be done in a quiz class later on
     public void Resume()
     {
+        busy = false;
         quizUI.SetActive(false);
         quizOpen = false;
+        tm.ResetTimer();
     }
 
     public void Quiz()
     {
+       
         quizUI.SetActive(true);
         quizOpen = true;
         Question q = question[0];
@@ -89,6 +93,11 @@ public class QuizOpen : MonoBehaviour
         {
             canvas.SetQuestion(q, tm);
         }
+    }
+
+    public bool isOpen()
+    {
+        return quizOpen;
     }
 
     public void Answer(AnswerButton selection)
@@ -104,9 +113,7 @@ public class QuizOpen : MonoBehaviour
         Debug.Log("Correct!");
         sm.ScoreUP(question[0].difficulty);
         sm.SetScore();
-        tm.timeLeft = 15;
         Resume();
-        busy = false;
     }
 
     // When lives are implemented, it will also subtract a life

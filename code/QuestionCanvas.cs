@@ -7,6 +7,7 @@ using OpenTDB;
 public class QuestionCanvas : MonoBehaviour
 {
     // Start is called before the first frame update
+    private PowerUps pUps = null;
 
     [SerializeField]
     Text textQuestion = null;
@@ -23,6 +24,11 @@ public class QuestionCanvas : MonoBehaviour
     [SerializeField]
     AnswerButton a4 = null;
 
+    [SerializeField]
+    Button pUp1;
+
+    //public List<AnswerButton> incorrectAnswers = new List<AnswerButton>();
+
     public static List<int> toShuffle = new List<int>() { 1, 2, 3, 4 };
 
     public static List<int> Shuffle(List<int> list)
@@ -33,7 +39,7 @@ public class QuestionCanvas : MonoBehaviour
         for (int n = 0; n < newList.Count; n++)
         {
             int temp = newList[n];
-            int randomIndex = (Random.Range(n, newList.Count));
+            int randomIndex = Random.Range(n, newList.Count);
             newList[n] = newList[randomIndex];
             newList[randomIndex] = temp; 
             
@@ -76,6 +82,7 @@ public class QuestionCanvas : MonoBehaviour
         }
         else
         {
+           
             button.SetText(q.incorrect_answers[n - 1]);
             button.isCorrect = false;
         }

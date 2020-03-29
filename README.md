@@ -331,5 +331,6 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [Score View Manual Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Score%20View%20Manual%20Test.md)
   - [OpenTDB Request Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/OpenTDB%20Request%20Test.md)
   - [Timer Manual Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Timer%20Manual%20Test.md)
+  - [Timer Runoff](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/TimerRunoff.md)
 
 - [Demonstration]

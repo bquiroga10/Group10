@@ -18,7 +18,11 @@ Requirement ID| User Story ID | Requirement|Acceptence criteria |Effort | Priori
 15 | 11 | When the ammmount of tries a player has to get a question right hits 0, the game will end and boot you back to the main menu | When the ammmount of tries a player has to get a question right hits 0, the game ends and boots you back to the main menu | 3 | Important | WORKING
 16 | 15 | When the main game is loaded, there will be a score counter on the top right hand corner of the screen | There is a score counter in the top right hand corner of the screen | 2 | Important | Satisfied
 17 | 15 | Once I get a question right, the score will increase, based on the difficulty the question was. | The score increases in an ammount relational to how hard the question was | 4 | Important | Satisfied
-18 | 12 | Once a question appears, a timer will pop up and start counting down until it hits zero | A timer pops up and starts counting down until it hits zero | 4 | Important | Testing
-19 | 12 | Once the timer hits 0, the game will automatically ends with a game over screen that prompts the user to go back to the title screen | The game will end if the timer ever hits 0 | 4 | Important | Working
-20 | 04 | Once the game is initialized, the player will spawn on the designated start tile | The player spawns on the designated spawn tile | 3 | Necessary | Testing
-21 | 04 | Once the player reaches the end tile, the game will end with a victory screen displaying the users score | The game ends with a victory screen displaying the player's score once the end tile is reached | 4 | Necessary | Testing
+18 | 12 | Once a question appears, a timer will pop up and start counting down until it hits zero | A timer pops up and starts counting down until it hits zero | 4 | Important | Satisfied
+19 | 12 | Once the timer hits 0, the game will automatically ends with a game over screen that prompts the user to go back to the title screen | The game will end if the timer ever hits 0 | 4 | Important | Satisfied
+20 | 04 | Once the game is initialized, the player will spawn on the designated start tile | The player spawns on the designated spawn tile | 3 | Necessary | Satisfied
+21 | 04 | Once the player reaches the end tile, the game will end with a victory screen displaying the users score | The game ends with a victory screen displaying the player's score once the end tile is reached | 4 | Necessary | Satisfied
+22 | 08 | There will be spaces that, if stepped on, gives a power up to the player | There are spaces that, if stepped on, gives a power up to the player | 8 | Important | Working
+23 | 10 | Once the player collects a power up, there will be a button that pops up when the next question is pulled | If a player collects a power up, there is a corresponding button when the next question is displayed | 5 | Important | Testing
+24 | 10 | If the player collects the skip power up, the player will be able to skip a given question | If the player collects the skip power up, the player can skip a given question | 5 | Important | Testing
+

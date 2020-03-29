@@ -271,3 +271,65 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
   - [Timer Manual Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Timer%20Manual%20Test.md)
 
 - [Demonstration](https://www.youtube.com/watch?v=LCqJ8HAyd7o)
+------------------------------------------------------------------------------------------------------------------
+**Sprint 7**
+
+- [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint8Responsibilities.md)
+
+- [Requirements](https://github.com/bquiroga10/Group10/blob/master/artifacts/Requirements.md)
+
+- [Trello](https://trello.com/b/C5sP821a/group-10)
+
+- [Burndown and Velocity chart](https://docs.google.com/spreadsheets/d/1c19jIiDAFveZubnuQdf-lcTjxe98yklTnnw0_VnYVbQ/edit?usp=sharing)
+
+- [Architecture](https://github.com/bquiroga10/Group10/tree/master/artifacts/architecture)
+
+- [Coding Files:](https://github.com/bquiroga10/Group10/tree/master/code)
+
+  - [MainMenu](https://github.com/bquiroga10/Group10/blob/master/code/MainMenu.cs)
+
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/code/PlayerMovement.cs)
+
+  - [GridManager](https://github.com/bquiroga10/Group10/blob/master/code/GridManager.cs)
+
+  - [QuizOpen](https://github.com/bquiroga10/Group10/blob/master/code/QuizOpen.cs)
+
+  - [AnswerButton](https://github.com/bquiroga10/Group10/blob/master/code/AnswerButton.cs)
+ 
+  - [Health](https://github.com/bquiroga10/Group10/blob/master/code/Health.cs)
+
+  - [MovementBehavior](https://github.com/bquiroga10/Group10/blob/master/code/MovementBehavior.cs)
+
+  - [Question](https://github.com/bquiroga10/Group10/blob/master/code/Question.cs)
+
+  - [QuestionCanvas](https://github.com/bquiroga10/Group10/blob/master/code/QuestionCanvas.cs)
+
+  - [ScoreManager](https://github.com/bquiroga10/Group10/blob/master/code/ScoreManager.cs)
+
+  - [QuestionRequest](https://github.com/bquiroga10/Group10/blob/master/code/QuestionRequest.cs)
+
+  - [Timer](https://github.com/bquiroga10/Group10/blob/master/code/Timer.cs)
+
+  - [ScoreDisplayer](https://github.com/bquiroga10/Group10/blob/master/code/ScoreDisplayer.cs)
+
+  - [PowerUps](https://github.com/bquiroga10/Group10/blob/master/code/PowerUps.cs)
+
+  - [Restart](https://github.com/bquiroga10/Group10/blob/master/code/Restart.cs)
+
+- Testing Files
+  - **Automatic**
+  - [PlayerMovement](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/MovementTests.cs)
+  - [AutomaticScore](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/Score%20Test.cs)
+  - [MapTest](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/MapTests.cs)
+  - [RandomList](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Tests/Editor/RandomList.cs)
+  - **Manual** 
+  - [Play Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Start%20Button%20Manual%20Test.md)
+  - [Quit Button](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Quit%20Button%20Manual%20Test.md)
+  - [Question Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Question%20Pop-up%20Manual%20Test.md)
+  - [Answer Testing](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Answering%20Question%20Manual%20Test.md)
+  - [Loading Map Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Loading%20Map%20Test.md)
+  - [Score View Manual Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Score%20View%20Manual%20Test.md)
+  - [OpenTDB Request Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/OpenTDB%20Request%20Test.md)
+  - [Timer Manual Test](https://github.com/bquiroga10/Group10/blob/master/project/Pyramid%20Puzzler/Assets/Manual%20Tests/Timer%20Manual%20Test.md)
+
+- [Demonstration]

@@ -26,6 +26,7 @@ public class GridManager : MonoBehaviour {
     private Dictionary<char, bool> getQuestionTiles;
     private char[] tilesChars = {'.', '#', 'S', 'E', 'P'};
     private bool[] questionTiles = {true, false, false, false, true};
+    private static bool powerupReady;
     // Start is called before the first frame update
     void Start() {
 
@@ -68,6 +69,8 @@ public class GridManager : MonoBehaviour {
         // Find the starting position of the player.
         helper.findStartingPosition(ref position, ref curPos, ref endPos, ref movePos, map);
         requestQuestion = false;
+
+        powerupReady = false;
     }
 
     // Update is called once per frame
@@ -128,6 +131,9 @@ public class GridManager : MonoBehaviour {
 
         if(hasQuestion[position.Item1, position.Item2]) {
             requestQuestion = true;
+            if(map[position.Item1][position.Item2] == 'P') {
+                powerupReady = true;
+            }
             hasQuestion[position.Item1, position.Item2] = false;
             setSprite(position.Item1, position.Item2, BLANK_ID);
         }
@@ -153,4 +159,13 @@ public class GridManager : MonoBehaviour {
             tiles[row, col].GetComponent<SpriteRenderer>().sprite = blank_tile.GetComponent<SpriteRenderer>().sprite;
         }
     }
+
+    public static bool isPowerupTile() {
+        if(powerupReady) {
+            powerupReady = false;
+            return true;
+        }
+        return false;
+    }
+    
 }

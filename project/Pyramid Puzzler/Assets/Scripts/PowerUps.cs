@@ -12,6 +12,7 @@ public class PowerUps : MonoBehaviour
     private QuestionCanvas canvas = null;
     private int first;
     private int second;
+    private static bool sqIsActive = false;
     public bool eiIsActive = false;
 
     [SerializeField]
@@ -30,10 +31,15 @@ public class PowerUps : MonoBehaviour
     }
     */
 
+    public static void enableSQ() {
+        sqIsActive = true;
+    }
+
     public void UseSQ()
     {
         QuizOpen.GetInstance().Resume();
         pUp1.gameObject.SetActive(false);
+        sqIsActive = false;
     }
 
 // Update is called once per frame
@@ -54,10 +60,11 @@ private void Select2()
 }
 */
 
-void Update()
+    void Update()
     {
         // Use for testing
-        if (Input.GetKeyDown(KeyCode.L))
+        // if (Input.GetKeyDown(KeyCode.L))
+        if(sqIsActive)
         {
             pUp1.gameObject.SetActive(true);
             Debug.Log("hello");

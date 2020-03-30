@@ -13,14 +13,19 @@ public class GridManager : MonoBehaviour {
 
     public bool isMoving;
     private float t;
-    private GameObject question_tile, block_tile, start_tile, end_tile, blank_tile;
+    private GameObject question_tile, block_tile, start_tile, end_tile, blank_tile, powerup_tile;
 
     // Much more convenient to store the current row and column as integers.
     private Tuple<int, int> position;
     private GameObject[,] tiles;
-    public bool [,] hasQuestion;
+    public bool[,] hasQuestion;
     public static bool requestQuestion;
     private PlayerMovement helper;
+    private int BLANK_ID = 11111111;
+    private Dictionary<char, int> getID;
+    private Dictionary<char, bool> getQuestionTiles;
+    private char[] tilesChars = {'.', '#', 'S', 'E', 'P'};
+    private bool[] questionTiles = {true, false, false, false, true};
     // Start is called before the first frame update
     void Start() {
 
@@ -35,8 +40,16 @@ public class GridManager : MonoBehaviour {
         start_tile = (GameObject)Instantiate(Resources.Load("START_TILE"));
         end_tile = (GameObject)Instantiate(Resources.Load("END_TILE"));
         blank_tile = (GameObject)Instantiate(Resources.Load("BLANK_TILE"));
+        powerup_tile = (GameObject)Instantiate(Resources.Load("POWERUP_TILE"));
 
         hasQuestion = new bool[map.Length, map[0].Length];
+
+        getID = new Dictionary<char, int>();
+        getQuestionTiles = new Dictionary<char, bool>();
+        for(int i = 0 ; i < tilesChars.Length ; i++) {
+            getID.Add(tilesChars[i], i);
+            getQuestionTiles.Add(tilesChars[i], questionTiles[i]);
+        }
 
         // This will hold the sprite information for each tile of the map.
         tiles = new GameObject[map.Length, map[0].Length];
@@ -44,22 +57,8 @@ public class GridManager : MonoBehaviour {
         for(int i = 0 ; i < map.Length ; i++) {
             for(int j = 0 ; j < map[i].Length ; j++) {
                 tiles[i, j] = (GameObject)Instantiate(block_tile, transform);
-
-                // As of right now, tiles that the player can move on are represented as '.'
-                // If this tile is '.', spawn the tile in using the question
-                if(map[i][j] == '.') {
-                    setSprite(i, j, 0);
-                    hasQuestion[i, j] = true;
-                }
-                if(map[i][j] == '#') {
-                    setSprite(i, j, 1);
-                }
-                if(map[i][j] == 'S') {
-                    setSprite(i, j, 2);
-                }
-                if(map[i][j] == 'E') {
-                    setSprite(i, j, 3);
-                }
+                setSprite(i, j, getID[map[i][j]]);
+                hasQuestion[i, j] = getQuestionTiles[map[i][j]];
             }
         }
         position = new Tuple<int, int>(0, 0);
@@ -73,7 +72,6 @@ public class GridManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
         showGrid();
         movement();
         if(!isMoving && helper.isEndingPosition(position, map)) SceneManager.LoadScene("Victory");
@@ -131,7 +129,7 @@ public class GridManager : MonoBehaviour {
         if(hasQuestion[position.Item1, position.Item2]) {
             requestQuestion = true;
             hasQuestion[position.Item1, position.Item2] = false;
-            setSprite(position.Item1, position.Item2, 4);
+            setSprite(position.Item1, position.Item2, BLANK_ID);
         }
 
 
@@ -149,7 +147,9 @@ public class GridManager : MonoBehaviour {
             tiles[row, col].GetComponent<SpriteRenderer>().sprite = start_tile.GetComponent<SpriteRenderer>().sprite;
         } else if(tileType == 3) { // End Tile
             tiles[row, col].GetComponent<SpriteRenderer>().sprite = end_tile.GetComponent<SpriteRenderer>().sprite;
-        } else if(tileType == 4) { // Blank Tile
+        } else if(tileType == 4) { // Powerup Tile
+            tiles[row, col].GetComponent<SpriteRenderer>().sprite = powerup_tile.GetComponent<SpriteRenderer>().sprite;
+        } else if(tileType == BLANK_ID) { // Blank Tile
             tiles[row, col].GetComponent<SpriteRenderer>().sprite = blank_tile.GetComponent<SpriteRenderer>().sprite;
         }
     }

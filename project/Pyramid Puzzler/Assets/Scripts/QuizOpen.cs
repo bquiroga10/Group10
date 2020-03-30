@@ -112,6 +112,9 @@ public class QuizOpen : MonoBehaviour
     {
         Debug.Log("Correct!");
         sm.ScoreUP(question[0].difficulty);
+        if(GridManager.isPowerupTile()) {
+            PowerUps.enableSQ();
+        }
         sm.SetScore();
         Resume();
     }

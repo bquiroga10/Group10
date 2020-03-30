@@ -272,7 +272,7 @@ Unlike normal online quizzes, our game will allow the player the free will to ch
 
 - [Demonstration](https://www.youtube.com/watch?v=LCqJ8HAyd7o)
 ------------------------------------------------------------------------------------------------------------------
-**Sprint 7**
+**Sprint 8**
 
 - [Responsibilities](https://github.com/bquiroga10/Group10/blob/master/artifacts/Sprint8Responsibilities.md)
 

@@ -58,7 +58,6 @@ private void Select2()
 void Update()
     {
         // Use for testing
-        Debug.Log(sqIsActive);
         if (Input.GetKeyDown(KeyCode.L))
         {
             pUp1.gameObject.SetActive(true);

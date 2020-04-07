@@ -15,6 +15,10 @@ public class QuizOpen : MonoBehaviour
 
     [SerializeField]
 
+    private Health health = null;
+
+    [SerializeField]
+
     private QuestionCanvas canvas = null;
 
     [SerializeField]
@@ -122,6 +126,7 @@ public class QuizOpen : MonoBehaviour
     // When lives are implemented, it will also subtract a life
     public void Incorrect()
     {
+
         Debug.Log("Incorrect");
     }
 

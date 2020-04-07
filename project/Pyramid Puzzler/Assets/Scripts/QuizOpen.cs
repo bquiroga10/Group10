@@ -126,8 +126,9 @@ public class QuizOpen : MonoBehaviour
     // When lives are implemented, it will also subtract a life
     public void Incorrect()
     {
-
+        health.loseHearts();
         Debug.Log("Incorrect");
+        Resume();
     }
 
 }

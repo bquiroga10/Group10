@@ -2,55 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Health : MonoBehaviour
 {
-    public int health;
-    public int numHearts;
+    public int numHearts = 3;
     public Image[] hearts;
     public Sprite redHeart;
     public Sprite blackHeart;
 
-    void Update()
+    public void loseHearts()
     {
-        if( health > numHearts)
+        if (numHearts == 0)
         {
-            health = numHearts;
-            /*
-            if(health == 0)
-            {
-                GameOver.End();
-            }
-            */
+            SceneManager.LoadScene("GameOver");
+            QuizOpen.GetInstance().Resume();
         }
-
-        for (int i = 0; i < hearts.Length; i++)
-        {
-
-            if(i < health)
-            {
-                hearts[i].sprite = redHeart;
-
-
-            }
-            else
-            {
-                hearts[i].sprite = blackHeart;
-
-            }
-
-            if(i< numHearts)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            } 
-
-        }
+        numHearts--;
     }
 
-
-
+    void Update()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Debug.Log(hearts.Length);
+            if (i >= numHearts)
+            {
+                hearts[i].sprite = blackHeart;
+            }
+            else
+            {
+                hearts[i].sprite = redHeart;
+            }
+        }
+    }
 }

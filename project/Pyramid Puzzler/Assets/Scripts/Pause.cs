@@ -13,11 +13,8 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Hi");
-        Debug.Log((QuizOpen.GetInstance().isOpen() == false));
         if(Input.GetKeyDown(KeyCode.Escape) && (QuizOpen.GetInstance().isOpen() == false))
-        {
-            Debug.Log("hi");
+        { 
             if (GameIsPaused)
                 Resume();
             else

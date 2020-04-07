@@ -10,10 +10,6 @@ public class Timer : MonoBehaviour
 
     Text timerText = null;
 
-    private QuizOpen open = null;
-
-    private GameOver gm = null;
-
     public int timeLeft = 15;
 
     public bool running = false;

@@ -32,11 +32,23 @@ public class GridManager : MonoBehaviour {
 
         helper = new PlayerMovement();
 
-        // Load in the testing map
-        map = System.IO.File.ReadAllLines("Assets/Resources/MAP.txt");
-        // TextAsset toMap = Resources.Load<TextAsset>("Text/MAP");
-       // map = toMap.ToString().Split('\n');
-
+        map = new string[] {"########E########",
+                            "######.....######",
+                            "######.#.#.######",
+                            "######.#.#.######",
+                            "####.........####",
+                            "####.#.#.###.####",
+                            "#....###.##.....#",
+                            "#.##.###.###.##.#",
+                            "#.##.........##.#",
+                            "#.##.###.###.##.#",
+                            "#.....##.###....#",
+                            "####.###.#.#.####",
+                            "####.........####",
+                            "######.#.#.######",
+                            "######.#.#.....P#",
+                            "######.....######",
+                            "########S########"};
 
         // Load in sprites
         question_tile = (GameObject)Instantiate(Resources.Load("QUESTION_TILE"));

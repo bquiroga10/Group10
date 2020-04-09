@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 
 
@@ -18,6 +17,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         // This is only used when in the Unity Editor, or else it wouldn't close there either
-        EditorApplication.isPlaying = false;
     }
 }

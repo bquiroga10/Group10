@@ -33,7 +33,7 @@ public class GridManager : MonoBehaviour {
         helper = new PlayerMovement();
 
         // Load in the testing map
-        map = System.IO.File.ReadAllLines("Assets/Scripts/MAP.txt");
+        map = System.IO.File.ReadAllLines("Assets/Resources/MAP.txt");
 
         // Load in sprites
         question_tile = (GameObject)Instantiate(Resources.Load("QUESTION_TILE"));

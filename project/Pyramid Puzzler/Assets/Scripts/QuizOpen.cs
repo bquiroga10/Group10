@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 using OpenTDB;
@@ -32,6 +33,10 @@ public class QuizOpen : MonoBehaviour
     [SerializeField]
 
     private PowerUps pUps = null;
+
+    [SerializeField]
+
+    Text rightWorng = null;
 
     private List<Question> question;
 
@@ -114,7 +119,7 @@ public class QuizOpen : MonoBehaviour
 
     public void Correct()
     {
-        Debug.Log("Correct!");
+        rightWorng.text = "Correct!";
         sm.ScoreUP(question[0].difficulty);
         if(GridManager.isPowerupTile()) {
             PowerUps.enableSQ();
@@ -127,7 +132,7 @@ public class QuizOpen : MonoBehaviour
     public void Incorrect()
     {
         health.loseHearts();
-        Debug.Log("Incorrect");
+        rightWorng.text = "Incorrect";
         Resume();
     }
 

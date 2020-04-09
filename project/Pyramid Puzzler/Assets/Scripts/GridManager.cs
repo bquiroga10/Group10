@@ -34,6 +34,9 @@ public class GridManager : MonoBehaviour {
 
         // Load in the testing map
         map = System.IO.File.ReadAllLines("Assets/Resources/MAP.txt");
+        // TextAsset toMap = Resources.Load<TextAsset>("Text/MAP");
+       // map = toMap.ToString().Split('\n');
+
 
         // Load in sprites
         question_tile = (GameObject)Instantiate(Resources.Load("QUESTION_TILE"));

@@ -46,8 +46,8 @@ public class GridManager : MonoBehaviour {
                             "####.###.#.#.####",
                             "####.........####",
                             "######.#.#.######",
-                            "######.#.#.....P#",
-                            "######.....######",
+                            "######.#.#.######",
+                            "######......P####",
                             "########S########"};
 
         // Load in sprites
@@ -157,6 +157,10 @@ public class GridManager : MonoBehaviour {
         // Once this animation is over, the player is free to apply another movement.
         isMoving = false;
         yield return 0;
+    }
+
+    public static void turnOffPowerupReady() {
+        powerupReady = false;
     }
 
     private void setSprite(int row, int col, int tileType) {

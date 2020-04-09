@@ -133,6 +133,7 @@ public class QuizOpen : MonoBehaviour
     {
         health.loseHearts();
         rightWorng.text = "Incorrect";
+        GridManager.turnOffPowerupReady();
         Resume();
     }
 

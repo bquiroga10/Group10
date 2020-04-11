@@ -26,6 +26,7 @@ public class Timer : MonoBehaviour
             timeLeft--;
             if(timeLeft == 0)
             {
+                PowerUps.sqIsActive = false;
                 QuizOpen.GetInstance().Resume();
                 SceneManager.LoadScene("GameOver");
             }

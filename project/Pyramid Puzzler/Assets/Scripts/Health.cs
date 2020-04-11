@@ -16,8 +16,9 @@ public class Health : MonoBehaviour
     {
         if (numHearts == 0)
         {
-            SceneManager.LoadScene("GameOver");
+            PowerUps.sqIsActive = false;
             QuizOpen.GetInstance().Resume();
+            SceneManager.LoadScene("GameOver");
         }
         numHearts--;
     }

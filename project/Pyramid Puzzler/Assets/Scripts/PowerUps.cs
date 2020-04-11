@@ -12,7 +12,7 @@ public class PowerUps : MonoBehaviour
     private QuestionCanvas canvas = null;
     private int first;
     private int second;
-    private static bool sqIsActive = false;
+    public static bool sqIsActive = false;
     public bool eiIsActive = false;
 
     [SerializeField]
